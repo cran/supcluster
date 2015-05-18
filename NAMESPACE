@@ -1,0 +1,2 @@
+import(mvtnorm,gtools)
+export(supcluster,concordmap,compare.chains,generate.cluster.data,beta.by.gene,tab1)

@@ -1,0 +1,17 @@
+51ee0b1c4900956b6f8a0f4b20c9595a *DESCRIPTION
+61df25eb03b08da06eafcddaeedae5d4 *NAMESPACE
+049f8796095930546795169ce490cf01 *R/concordmap.R
+14be8ef8f394201c6f422941a863c19b *R/generate.cluster.data.R
+81a0a2ae32ac81ef969193b9fc5e8f4d *R/supcluster.R
+c2973ca5758f8532289094700f2fcb6d *R/tab1.R
+7b74381986b6af113acd34911e57e72b *data/gene_names.rda
+80a98a36e12ffd30d480bfd0a86aeae0 *data/trauma_data.rda
+f693b061499a17f626e6bf19d3bdee9b *man/beta.by.gene.Rd
+ce8d56c6a1d9df6094987f62bd8d27ce *man/compare.chains.Rd
+818fc8943e4b6f27188e9106b60b5701 *man/concordmap.Rd
+417cf815212ef7c87cbfdd572f7bbb96 *man/gene_names.Rd
+fa9d94047c9c11b4274c61631de45e7b *man/generate.cluster.data.Rd
+ffbe81d893a4d58ae3b129af0109607d *man/supcluster-package.Rd
+bcbb0ce63cb2f8346c6ece019bc36e8b *man/supcluster.Rd
+51d55d1591c21d6f586837d1056f8d49 *man/tab1.Rd
+5549928cc030b734edad7528ddf2649d *man/trauma_data.Rd
