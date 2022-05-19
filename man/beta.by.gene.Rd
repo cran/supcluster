@@ -31,7 +31,7 @@ The model associates the coefficients of the random effects with the cluster num
 \seealso{\code{\link{supcluster}},,\code{\link{compare.chains}},\code{\link{concordmap}}}
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 \examples{
-dat=generate.cluster.data(1)
+dat=generate.cluster.data(1)[[1]]
 us=supcluster(dat,outcome="outcome",features=1:50,maxclusters=6,nstart=20,n=40)
 vs=beta.by.gene(us)
 colMeans(vs[,2:7])

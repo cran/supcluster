@@ -1,8 +1,8 @@
 Package: supcluster
 Type: Package
 Title: Supervised Cluster Analysis
-Version: 1.0
-Date: 2015-05-18
+Version: 1.0.1
+Date: 2022-05-19
 Author: David A. Schoenfeld,
   Jesse Hsu
 Maintainer: David A. Schoenfeld <dschoenfeld@mgh.harvard.edu>
@@ -16,8 +16,8 @@ Description: Clusters features under the assumption that each cluster has a
 License: GPL-2
 Imports: mvtnorm, gtools
 Collate: 'supcluster.R' 'concordmap.R' 'generate.cluster.data.R'
-        'tab1.R'
-Packaged: 2015-05-18 17:29:07 UTC; das15
+        'tab1.R' 'binary_link.R'
+Packaged: 2022-05-19 14:33:17 UTC; das15
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2015-05-18 22:45:09
+Date/Publication: 2022-05-19 14:50:02 UTC

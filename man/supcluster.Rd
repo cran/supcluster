@@ -4,18 +4,18 @@
 \title{Clustering of Features Supervised by an Outcome 
 %%  ~~function to do ... ~~
 }
-\description{We assume that each individual has set of features and an outcome, further we assume that the features are organized in clusters with a random effect for each cluster, and that the outcome is related to the random effects by a linear regression. The function supcluster performs an MCMC to determine the parameters of this model including the cluster membership of each feature. The program can also perform the estimation without considering the outcome.
+\description{We assume that each individual has set of features and an outcome, further we assume that the features are organized in clusters with a random effect for each cluster, and that the outcome is related to the random effects by a linear regression. The function supcluster performs an MCMC to determine the parameters of this model including the cluster membership of each feature. The program can also perform the estimation without considering the outcome. The outcome can be any data object, as long as it is related to the individual through a frialty.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 supcluster(data,outcome,features,log.transform=TRUE,maxclusters=10,
 nstart=100,n=500,shape=1,scale=1,alpha=1,betaP=1,fixj="random",
-                     fbeta=FALSE,starting.value=NULL,nchains=1)
+fbeta=FALSE,starting.value=NULL,nchains=1,linkLikelihood = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{ A data frame of the input data }
-  \item{outcome}{Either the variable number or the variable name of the outcome variable. If \code{fbeta=TRUE}, no outcome variable is used.}
+  \item{outcome}{Either the variable number or the variable name of the outcome variable. If \code{fbeta=TRUE}, no outcome variable is used. If NULL we assume the outcome is a data object and there is a likelihood relating it to a per-patient frialty variable.  In that case linkLikelihood cannont be NULL}
   \item{features}{A list of features either as variable names or column numbers this can't be mixed}
 \item{log.transform}{Log transform the feature data. Generally used when the features are gene expressons}
 \item{maxclusters}{The maximum number of clusters used}
@@ -49,6 +49,7 @@ Otherwise it is parameter vector similar to the one described under ``value'' be
   \item{nchains}{ Number of chains to run
 %%     ~~Describe \code{nchains} here~~
 }
+\item{linkLikelihood}{Likelihood function for model linking actual outcome data to the per-patient frialty. The input of the function is a vector of length \code{dim(data)[1]+nparms}, where \code{nparms} is the number of parameters in the outcome model. The first part of the vector are the frailties and the second part are the parameters of the model.  If NULL then \code{outcome} is used.}
 }
 
 \value{
@@ -56,8 +57,8 @@ A compound list is returned. At the first level is the chain number.  At the sec
 \item{inp}{This has twp values \code{maxclusters} giving the maximum number of clusters and \code{ngenes} giving the maximum number of features}
 \item{parms}{This is a \code{n} by \code{3+maxclusters+ngenes} matrix.  Each row is one MCMC iteration. The first three columns are the values of the variance components \eqn{\sigma^2,\tau^2}, and \eqn{\gamma^2} the next \code{maxcluster} values are the regression coefficients for each cluster and the final \code{ngenes} values are the cluster membership of each feature}
 }
-\references{To be added once the paper is published
-%% ~put references to the literature/web site here ~
+\references{
+Hsu, Jessie J., Dianne M. Finkelstein, and David A. Schoenfeld. "Outcome-driven cluster analysis with application to microarray data." PloS one 10.11 (2015): e0141874.
 }
 \author{ David A. Schoenfeld, Jessie Hsu
 %%  ~~who you are~~

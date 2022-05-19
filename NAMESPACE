@@ -1,2 +1,9 @@
 import(mvtnorm,gtools)
-export(supcluster,concordmap,compare.chains,generate.cluster.data,beta.by.gene,tab1)
+importFrom("grDevices", "gray")
+importFrom("graphics", "image")
+importFrom("stats", "dgamma", "dmultinom", "kmeans", "rbinom", "rexp",
+             "rgamma", "rnorm", "runif", "var")
+export(supcluster,concordmap,
+       compare.chains,generate.cluster.data,beta.by.gene,tab1,binaryLink,
+       binaryOutcome,survivalOutcome,coxLink)
+

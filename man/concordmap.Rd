@@ -48,7 +48,7 @@ If sort genes=FALSE only the m x m matrix is returned.
 ##--	or do  help(data=index)  for the standard data sets.
 #NOTE: only a small number of MCMC iterations are done due to time constraints
 dat=generate.cluster.data(.2,npats=40,clusts=c(12,8,5),
-                sig=1,gamma=1,beta=c(-5,0,6))
+                sig=1,gamma=1,beta=c(-5,0,6))[[1]]
 us=supcluster(dat,outcome="outcome",features=1:25,maxclusters=4,nstart=20,n=40,nchains=2)
 ts1=concordmap(us,chains=1)
 #plot of the concord map

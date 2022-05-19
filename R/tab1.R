@@ -37,7 +37,7 @@ tab1<-function(ratio=4,reps=100,n=1000,start=500,fbeta=FALSE,
   for (k in 1:reps){
     ts=generate.cluster.data(ratio,npats=npats,
                              clusts=clusts,
-                             sig=sig,gamma=gamma,beta=beta)
+                             sig=sig,gamma=gamma,beta=beta)[[1]]
     vs=supcluster(ts,maxclusters=maxclusters,nstart=start,n=n,nchains=chains,fbeta=fbeta)
     if(plot){
       us=concordmap(vs,chains=chains)

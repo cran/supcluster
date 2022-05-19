@@ -1,5 +1,5 @@
 generate.cluster.data=function(ratio,npats=80,clusts=c(12,8,12,12,6),
-                sig=1,gamma=1,beta=c(-5,-2.5,0,2.5,5)){
+                sig=1,gamma=1,beta=c(-5,-2.5,0,2.5,5),outcomeModel=NULL){
   nclusters=length(clusts)
  ngenes=sum(clusts)
 #create jmatrix
@@ -23,5 +23,8 @@ parms=list(jmatrix=jmatrix,sig=sig,gamma=gamma,beta=beta,tau=ratio*sig)
 dat=rmvnorm(npats,sigma=sigma(parms))
 colnames(dat)<-c(paste('x',1:ngenes,sep=""),"outcome")
 dat[1:npats,1:ngenes]=exp(dat[1:npats,1:ngenes])
-return(dat)
+if(!is.null(outcomeModel)) {dat2=outcomeModel(dat[,"outcome"])
+return(list(clusterModel=dat,outcomeModel=dat2))}
+else {return(list(clusterModel=dat))}
 } 
+
